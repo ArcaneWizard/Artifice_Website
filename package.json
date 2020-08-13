@@ -20,7 +20,7 @@
     "turbo-cli": "^0.39.1"
   },
   "scripts": {
-    "start": "npm run build",
+    "start": "react-scripts start && node index.js",
     "build": "react-scripts build",
     "install-client": "npm install",
     "heroku-postbuild": "npm install && npm build",
