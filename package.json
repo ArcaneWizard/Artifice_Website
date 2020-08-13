@@ -25,8 +25,7 @@
     "install-client": "npm install",
     "heroku-postbuild": "npm install && npm build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "react-scripts build"
+    "eject": "react-scripts eject"
   },
   "engines": {
     "node": "~6.10.3",
