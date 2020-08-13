@@ -18,6 +18,10 @@ app.get('/mailingList', (req, res) => {
         })
 });
 
+app.post('/test', (req, res) => {
+    res.json("this is a test msg sent from the server while debugging");
+})
+
 app.post('/email', (req, res) => {
     
     mailingList.find({mail: req.body.email}, {multi: false}, (err, obj) => {
