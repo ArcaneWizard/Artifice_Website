@@ -7,7 +7,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-const db = require('monk')('localhost/database');
+const db = require('monk')('localhost/database' || process.env.MONGODB_URI);
 var mailingList = db.get('mailList');
 
 app.get('/mailingList', (req, res) => {
@@ -60,4 +60,8 @@ app.listen(port, host, () => console.log(`Example app listening on port ${port}!
 
 if (process.env.NODE_ENV === "production"){    
    app.use(express.static(path.join(__dirname, "build")));
+
+   app.get('*', (req, res) => {
+        res.sendFile(path.join(_dirname, "build", "index.html"));
+   });
 }
