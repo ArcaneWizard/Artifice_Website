@@ -26,6 +26,7 @@ export default class Home extends Component {
 }
 
 const port = process.env.PORT || 5000; 
+console.log(port);
 
 //post email to the mailing list database
 async function addEmailToDatabase(e) {
@@ -36,7 +37,7 @@ async function addEmailToDatabase(e) {
         email
     }
 
-    fetch(`http://localhost:${port}/email`, {
+    fetch(`/email`, {
         method: 'POST',
         body: JSON.stringify(posts),
         headers: {
