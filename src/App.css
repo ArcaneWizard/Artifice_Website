@@ -1,0 +1,11 @@
+:root {
+  --cyans: #4B5D67;
+  --darkPurples: #302233;
+  --purples: #59405C;
+  --pinks: #87556F;
+  --whites: #cecece;
+}
+
+body {
+  background-color: var(--darkPurples);
+}
