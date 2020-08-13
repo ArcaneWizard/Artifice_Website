@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const path = require('path');
 const port = process.env.PORT || 5000;
 
 const cors = require('cors');
@@ -52,5 +53,16 @@ function validateEmail(email) {
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 if (process.env.NODE_ENV === "production"){    
-   app.use(express.static("build"));
-} 
+   app.use(express.static(path.join(__dirname, "build")));
+} const fs = require('fs');
+
+// read/process package.json
+const file = 'package.json';
+
+let pkg = JSON.parse(fs.readFileSync(file).toString());
+
+// at this point you should have access to your ENV vars
+pkg.proxy = `${process.env.HOST}:${process.env.PORT}`;
+
+// the 2 enables pretty-printing and defines the number of spaces to use
+fs.writeFileSync(pkg, JSON.stringify(file, null, 2));
