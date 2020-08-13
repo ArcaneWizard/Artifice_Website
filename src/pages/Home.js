@@ -36,8 +36,8 @@ async function addEmailToDatabase(e) {
     const posts = {
         email
     }
-
-    fetch("/email", {
+    
+    fetch("/test", {
         method: 'POST',
         body: JSON.stringify(posts),
         headers: {
