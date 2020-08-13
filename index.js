@@ -49,4 +49,8 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+if (process.env.NODE_ENV === "production"){    
+   app.use(express.static("build"));
+} 
