@@ -1,13 +1,13 @@
 const express = require('express');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-const db = require('monk')('localhost/database');
+const db = require('monk')('localhost/database' || process.env.MONGODB_URL);
 var mailingList = db.get('mailList');
 
 app.get('/mailingList', (req, res) => {
@@ -47,6 +47,10 @@ app.post('/email', (req, res) => {
 function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
+}
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express,static('build'));
 }
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

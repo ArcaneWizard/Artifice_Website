@@ -20,10 +20,12 @@ export default class Home extends Component {
                     </form>
                     <p id="notification">(You'll be notified of its release.)</p>
                 </div>
-            </CSS>
+            </CSS> 
         )
     }
 }
+
+const port = process.env.PORT || 5000; 
 
 //post email to the mailing list database
 async function addEmailToDatabase(e) {
@@ -34,7 +36,7 @@ async function addEmailToDatabase(e) {
         email
     }
 
-    fetch('http://localhost:5000/email', {
+    fetch(`http://localhost:${port}/email`, {
         method: 'POST',
         body: JSON.stringify(posts),
         headers: {
