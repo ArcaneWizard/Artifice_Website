@@ -25,9 +25,6 @@ export default class Home extends Component {
     }
 }
 
-const port = process.env.PORT || 5000; 
-console.log(port);
-
 //post email to the mailing list database
 async function addEmailToDatabase(e) {
     e.preventDefault(); 
