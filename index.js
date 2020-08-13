@@ -2,7 +2,6 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
-const port = process.env.PORT || 5000;
 
 const cors = require('cors');
 app.use(cors());
@@ -54,7 +53,10 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+const port = process.env.PORT || 5000;
+const host = '0.0.0.0';
+
+app.listen(port, host, () => console.log(`Example app listening on port ${port}!`));
 
 if (process.env.NODE_ENV === "production"){    
    app.use(express.static(path.join(__dirname, "build")));
