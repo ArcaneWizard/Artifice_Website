@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/posts" component={Post}/>
         <Route path="/requests" component={Request}/>
+        <Route component={Home}/>
       </Switch>
       <Footer />
     </div>

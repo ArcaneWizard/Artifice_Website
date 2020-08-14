@@ -20,15 +20,8 @@ const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-app.get('/mailingList', (req, res) => {
-    mailingList.find()
-        .then(email => {
-            res.json(email);
-        })
-});
 
 app.post('/test', (req, res) => {
-    sendConfirmationEmail(req.body.email);
     res.json("this is a test msg sent from the server while debugging");
 })
 
@@ -39,7 +32,7 @@ app.post('/email', (req, res) => {
             //if an array with that mail object is returned, it already exists
             if (obj.length >= 1) 
                 res.json("This email has already been added");
-                
+
             else {
 
                 //if the email is a valid email, add them with confirmation
@@ -99,3 +92,8 @@ if (process.env.NODE_ENV === "production"){
    app.use(express.static(path.join(__dirname, "build")));
 }
 
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get('/*', (req, res) => {   
+    res.sendFile(path.join(path.join(__dirname, "build/index.html")));
+});
