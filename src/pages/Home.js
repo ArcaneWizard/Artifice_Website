@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Gameplay from './../images/Gameplay.PNG'
+import Level_1 from './../images/Level_1.png'
 
 export default class Home extends Component {
 
@@ -9,7 +9,7 @@ export default class Home extends Component {
         return (
             <CSS>
                 <div className="container-fluid">                    
-                    <img src={Gameplay} alt="..."/>
+                    <img src={Level_1} alt="..."/>
                     <p>Coming to Android (and likely IOS) devices sometime in 2020</p>
                     <p>Join our mailing list to wishlist the game.</p>
                     <form>
