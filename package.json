@@ -13,6 +13,7 @@
     "heroku": "^7.42.6",
     "monk": "^7.3.1",
     "nodemailer": "^6.4.11",
+    "nodemailer-smtp-transport": "^2.7.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
