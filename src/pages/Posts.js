@@ -5,14 +5,14 @@ import Image from '../components/Image'
 import Menu from './../images/Menu.PNG'
 import Gameplay from './../images/Gameplay.PNG'
 
-class Posts extends Component {
+export default class Posts extends Component {
     render() {        
         return (
             <StyledDiv>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="summary col-md-12 col-sm-12 ">
-                            <p> The Raged Knight is an action-paced bow tower defense game currently under development</p>
+                            <p> The Raged Knight is an action-packed bow tower defense game currently under development</p>
                             <p> Here you can check out weekly screenshots and updates.</p>
                         </div>
                         <Image src={Menu} caption={"Main Menu on 8-9"} /> 
@@ -44,5 +44,3 @@ const StyledDiv = styled.header` {
     .row {
     }
 }`;
-
-export default Posts;
