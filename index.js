@@ -17,6 +17,7 @@ console.log("Connected to " + db._connectionURI);
 var mailingList = db.get('mailList');
 
 const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 app.get('/mailingList', (req, res) => {
@@ -64,13 +65,13 @@ app.post('/email', (req, res) => {
 });
 
 function sendConfirmationEmail(userEmail) {
-    let transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport(smtpTransport({
         service: 'gmail',
         auth: {
             user: process.env.EMAIL,
             pass: process.env.PASSWORD
         }
-    })
+    }));
 
     let mailOptions = {
         from: 'ballisticwalrus42@gmail.com',
