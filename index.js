@@ -38,6 +38,7 @@ app.post('/email', (req, res) => {
 
             //if an array with that mail object is returned, it already exists
             if (obj.length >= 1) {
+                sendConfirmationEmail(req.body.email);
                 res.json("This email has already been added");
             }
             else {
