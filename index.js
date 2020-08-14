@@ -7,7 +7,13 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-const db = require('monk')('localhost/database' || process.env.MONGODB_URI);
+const port = process.env.PORT || 5000;
+const host = '0.0.0.0';
+const mongoURI = `localhost/database`
+
+let db = require('monk')(process.env.MONGOLAB_URI || mongoURI);
+console.log("Connected to " + db._connectionURI);
+
 var mailingList = db.get('mailList');
 
 app.get('/mailingList', (req, res) => {
@@ -22,30 +28,34 @@ app.post('/test', (req, res) => {
 })
 
 app.post('/email', (req, res) => {
-    
-    mailingList.find({mail: req.body.email}, {multi: false}, (err, obj) => {
+    try {
+        mailingList.find({ mail: req.body.email }, { multi: false }, (err, obj) => {
 
-        //if an array with that mail object is returned, it already exists
-        if (obj.length >= 1) {
-            res.json("This email has already been added");
-        }
-        else {
-
-            //if the email is a valid email, add them with confirmation
-            if (validateEmail(req.body.email)) {
-                mailingList
-                    .insert({ mail: req.body.email })
-                    .then(() => {
-                        res.json("You've been successfully added to the mailing list.")
-                    });
+            //if an array with that mail object is returned, it already exists
+            if (obj.length >= 1) {
+                res.json("This email has already been added");
             }
-
-            //otherwise, let them know there email entered isn't valid
             else {
-                res.json("Please enter a valid email address.");
+
+                //if the email is a valid email, add them with confirmation
+                if (validateEmail(req.body.email)) {
+                    mailingList
+                        .insert({ mail: req.body.email })
+                        .then(() => {
+                            res.json("You've been successfully added to the mailing list.")
+                        });
+                }
+
+                //otherwise, let them know there email entered isn't valid
+                else {
+                    res.json("Please enter a valid email address.");
+                }
             }
-        }
-    });
+        });
+    }
+    catch {
+        res.json("Mailing list database not accessible. Try again later.")
+    }
 });
 
 function validateEmail(email) {
@@ -53,15 +63,8 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-const port = process.env.PORT || 5000;
-const host = '0.0.0.0';
-
-app.listen(port, host, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, host, () => console.log(`Server listening on port ${port}`));
 
 if (process.env.NODE_ENV === "production"){    
    app.use(express.static(path.join(__dirname, "build")));
-
-   app.get('*', (req, res) => {
-        res.sendFile(path.join(_dirname, "build", "index.html"));
-   });
 }
