@@ -37,10 +37,9 @@ app.post('/email', (req, res) => {
         mailingList.find({ mail: req.body.email }, { multi: false }, (err, obj) => {
 
             //if an array with that mail object is returned, it already exists
-            if (obj.length >= 1) {
-                sendConfirmationEmail(req.body.email);
+            if (obj.length >= 1) 
                 res.json("This email has already been added");
-            }
+                
             else {
 
                 //if the email is a valid email, add them with confirmation

@@ -75,7 +75,7 @@ const CSS = styled.header` {
     }
 
     img {
-        width: 50em;
+        width: 45em;
         margin: 2em;
     }
 
