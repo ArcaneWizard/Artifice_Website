@@ -14,7 +14,7 @@ export default class Header extends Component {
 
     render () {
         return(
-        <Navbar>
+        <Navbar className="container-full">
             <nav className="navbar navbar-dark navbar-expand-lg">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@ const Navbar = styled.nav` {
     }
 
     ul {
-        width: 32em;
+        width: 100%;
     }
 
     a {

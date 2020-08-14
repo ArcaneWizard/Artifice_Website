@@ -7,7 +7,7 @@ export default class Image extends Component {
             <StyledDiv className="col-md-6 col-sm-12 col-lg-6">
                 <div>
                     <div className="thumbnail">
-                        <img src={this.props.src} alt="..."/>
+                        <img src={this.props.src} alt="Screenshot of the game"/>
                             <div className="caption">
                                 <h3>{this.props.caption}</h3>
                             </div>
@@ -27,12 +27,35 @@ const StyledDiv = styled.div` {
     }
 
     img {
-        width: 42em;
+        width: 100%;
         padding: 3em;
     }
 
     h3 {
         padding: 0.4em 0em;
         color: var(--whites);
+    }
+
+    @media screen and (max-width: 700px) {
+        img {
+            width: 100%;
+            padding: 1.2em;
+        }
+       h3 {
+           padding: 0.1em 0em 1em 0em;
+           font-size: 0.9em;
+       }
+    }
+
+    @media screen and (min-width: 700px) {{
+        img {
+            width: 100%;
+            padding: 3em 3em 2em 3em;
+        }
+
+       h3 {
+           padding: 0.3em 0em;
+           font-size: 1.7em;
+       }
     }
 }`;

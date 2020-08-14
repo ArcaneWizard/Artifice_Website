@@ -29,6 +29,19 @@ const StyledDiv = styled.header` {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-color: var(--whites);
         font-size: 1.5em;
+        padding: 0.2em 0em;
+    }
+
+    @media screen and (max-width: 700px) {
+       p {
+           font-size: 1em;
+       }
+    }
+
+    @media screen and (min-width: 700px) {
+       p {
+           font-size: 1.5em;
+       }
     }
     
     .content {
@@ -37,10 +50,7 @@ const StyledDiv = styled.header` {
 
     .summary {
         color: var(--whites);
-        padding: 4em 4em 1em 4em;
+        padding: 4em 1.2em 1em 1.2em;
         text-align: center;
-    }
-
-    .row {
     }
 }`;
