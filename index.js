@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 const host = '0.0.0.0';
 const mongoURI = `localhost/database`
 
-let db = require('monk')(process.env.MONGODB_URI || mongoURI);
+let db = require('monk')(process.env.MONGOATLAS_URL || mongoURI);
 console.log("Connected to " + db._connectionURI);
 var mailingList = db.get('mailList');
 
