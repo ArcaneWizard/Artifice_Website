@@ -26,11 +26,6 @@ const StyledDiv = styled.div` {
         text-align: center;
     }
 
-    img {
-        width: 100%;
-        padding: 3em;
-    }
-
     h3 {
         padding: 0.4em 0em;
         color: var(--whites);
@@ -49,13 +44,13 @@ const StyledDiv = styled.div` {
 
     @media screen and (min-width: 700px) {{
         img {
-            width: 100%;
-            padding: 3em 3em 2em 3em;
+            width: 90%;
+            padding: 3em 3em 1.2em 3em;
         }
 
        h3 {
-           padding: 0.3em 0em;
-           font-size: 1.7em;
+           padding: 0em 0em;
+           font-size: 1.5em;
        }
     }
 }`;

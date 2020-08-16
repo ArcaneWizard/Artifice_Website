@@ -74,14 +74,15 @@ const Navbar = styled.nav` {
     }
 
     .navbar2 {
+        background-color: var(--darkPurples);
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        z-index: 100;
     }
 
     .navbar {
-      background-color: var(--darkPurples);
       text-align: center;
       align-items: center;
       display: block;
