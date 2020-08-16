@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="container">
                         <div className="footer-bottom">
                             <p className="text-sx-left">
-                                &copy; {new Date().getFullYear()} Rage Knight - All Rights
+                                &copy; {new Date().getFullYear()} Dusk Knight - All Rights
                             </p>
                         </div>
                     </div>
@@ -21,7 +21,6 @@ export default function Footer() {
 
 const CSS = styled.div` {
 .main-footer {
-    margin-top: 2em;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -34,9 +33,8 @@ const CSS = styled.div` {
    font-weight: 430;
    text-align: center;
  }
- 
+
  .footer-bottom {
-   padding: 2em 0em 1em 0em;
    text-align: center;
  }
  
@@ -44,4 +42,24 @@ const CSS = styled.div` {
    font-size: 1.2em;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  }
+ 
+ @media screen and (max-width: 700px) {
+    .footer-bottom {
+        padding: 0.7em 0em 0em 0em;
+    }
+      .text-sx-left {
+        font-size: 0.9em;
+        position: relative;
+        bottom: 0.27em;
+      }
+      .footer-middle {
+          position: relative;
+          bottom: -1.08em;
+      }
+ }
+
+ @media screen and (min-width: 700px) {
+    .footer-bottom {
+        padding: 1em 0em 0.4em 0em;
+      }
 }`;

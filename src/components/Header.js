@@ -16,11 +16,7 @@ export default class Header extends Component {
         return(
         <Navbar className="container-full">
             <nav className="navbar navbar-dark navbar-expand-lg">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto container">
                         <li className="nav-item">
                             <Link onClick={e => updateActiveLink(e.target)} ref={ref => this.home = ref} className="nav-link" to="/">Home </Link>
@@ -64,6 +60,15 @@ function updateActiveLink(e) {
 }
 
 const Navbar = styled.nav` {
+    li {
+        display: inline-block;
+    }
+
+    .navbar-nav {
+        display: block;
+        text-align: center;
+    }
+
     .navbar {
       background-color: var(--darkPurples);
     }
@@ -74,8 +79,32 @@ const Navbar = styled.nav` {
 
     a {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1.5em;
     }
+    
+    @media screen and (max-width: 700px) {
+        a {
+            font-size: 0.9em;
+        }
+        .navbar {
+            height: 2.1em;
+        }
+        li {
+            position: relative;
+            bottom: 0.6em;
+            padding: 0em 8%;
+        }
+     }
 
+     @media screen and (min-width: 700px) {
+        a {
+            font-size: 1.5em;
+        }
+        .navbar {
+            height: 4em;
+        }
+        li {
+            padding: 0em 10%;
+        }
+      }
 
     }`;
