@@ -16,7 +16,7 @@ export default class Header extends Component {
         return(
         <Navbar className="container-full">
             <nav className="navbar navbar-dark navbar-expand-lg">
-                <div className="navbar-collapse" id="navbarSupportedContent">
+                <div className="navbar2" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto container">
                         <li className="nav-item">
                             <Link onClick={e => updateActiveLink(e.target)} ref={ref => this.home = ref} className="nav-link" to="/">Home </Link>
@@ -69,12 +69,22 @@ const Navbar = styled.nav` {
         text-align: center;
     }
 
-    .navbar {
-      background-color: var(--darkPurples);
+    ul {
+        text-align: center;
     }
 
-    ul {
+    .navbar2 {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+    }
+
+    .navbar {
+      background-color: var(--darkPurples);
+      text-align: center;
+      align-items: center;
+      display: block;
     }
 
     a {
@@ -85,13 +95,13 @@ const Navbar = styled.nav` {
         a {
             font-size: 0.9em;
         }
-        .navbar {
+        .navbar, .navbar2 {
             height: 2.1em;
         }
         li {
-            position: relative;
-            bottom: 0.6em;
             padding: 0em 8%;
+            position: relative;
+            top: -0.1em;
         }
      }
 
@@ -99,11 +109,13 @@ const Navbar = styled.nav` {
         a {
             font-size: 1.5em;
         }
-        .navbar {
+        .navbar, .navbar2 {
             height: 4em;
         }
         li {
             padding: 0em 10%;
+            position: relative;
+            top: 0.2em;
         }
       }
 

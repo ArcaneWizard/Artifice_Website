@@ -50,7 +50,7 @@ const CSS = styled.div` {
       .text-sx-left {
         font-size: 0.9em;
         position: relative;
-        bottom: 0.27em;
+        bottom: 0.45em;.
       }
       .footer-middle {
           position: relative;
