@@ -20,7 +20,7 @@ export default class Home extends Component {
                             <button onClick={addEmailToDatabase} className="btn btn-primary bg-primary">Join</button>
                         </div>
                     </form>
-                    <p id="notification">(You'll be notified of its release.)</p>
+                    <p id="notification">You'll be notified when the game releases and of any huge updates. Emails once / two weeks so no spam.</p>
                 </div> 
             </CSS> 
         )
@@ -66,6 +66,11 @@ const CSS = styled.header` {
            font-size: 1em;
        }
 
+       #notification {
+        margin-top: 1.2em;
+        font-size: 0.8em;
+   }
+
        #email {
         font-size: 0.8em;
        }
@@ -85,6 +90,11 @@ const CSS = styled.header` {
        p {
            font-size: 1.5em;
        }
+
+       #notification {
+            margin-top: 1.2em;
+            font-size: 1em;
+       }
         
         form {
             display: inline-block;
@@ -92,11 +102,6 @@ const CSS = styled.header` {
             margin-top: 2em;
             min-width: 15em;
         }
-    }
-
-    #notification {
-        margin-top: 1.2em;
-        font-size: 1em;
     }
 
     #email {
@@ -130,6 +135,6 @@ const CSS = styled.header` {
 
     img {
         width: 90%;
-        max-width: 45em;
+        max-width: 40em;
     }
 }`;
