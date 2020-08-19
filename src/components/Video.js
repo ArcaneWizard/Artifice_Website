@@ -23,6 +23,10 @@ const StyledDiv = styled.div` {
     .thumbnail {
         text-align: center;
     }
+    
+    video:focus {
+        outline: none;
+    }
 
     h3 {
         padding: 0.4em 0em;
