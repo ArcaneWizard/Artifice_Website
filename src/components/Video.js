@@ -6,7 +6,7 @@ export default class Video extends Component {
         return (
             <StyledDiv className="col-md-6 col-sm-12 col-lg-6">
                     <div className="thumbnail">
-                        <video src={this.props.src} type="video/mp4" controls playsinline muted autoplay loop  />
+                        <video src={this.props.src} type="video/mp4" controls playsinline webkit-playsinline muted autoplay loop  />
                             <div className="caption">
                                 <h3>{this.props.caption}</h3>
                             </div>
