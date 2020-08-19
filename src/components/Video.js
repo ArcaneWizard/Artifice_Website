@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
-export default class Image extends Component {
+export default class Video extends Component {
     render() {        
         return (
             <StyledDiv className="col-md-6 col-sm-12 col-lg-6">
                     <div className="thumbnail">
-                        <img src={this.props.src} alt="Screenshot of the game"/>
+                        <video src={this.props.src} type="video/mp4" controls playsinline muted autoplay loop  />
                             <div className="caption">
                                 <h3>{this.props.caption}</h3>
                             </div>
@@ -30,7 +30,7 @@ const StyledDiv = styled.div` {
     }
 
     @media screen and (max-width: 700px) {
-        img {
+        video {
             width: 100%;
             padding: 1.2em;
         }
@@ -41,7 +41,7 @@ const StyledDiv = styled.div` {
     }
 
     @media screen and (min-width: 700px) {{
-        img {
+        video {
             width: 90%;
             padding: 3em 3em 1.2em 3em;
         }

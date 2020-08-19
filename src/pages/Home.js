@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Level_1 from './../images/Level_1.png'
+import lvl_2 from './../videos/lvl_2.mp4'
 
 export default class Home extends Component {
 
@@ -10,7 +10,7 @@ export default class Home extends Component {
             <CSS>
                 <div className="container-fluid">   
                 <div className="imgDiv col-md-12 col-sm-12 col-lg-12">
-                    <img src={Level_1} alt="Teaser image of the game"/>     
+                     <video src={lvl_2} type="video/mp4" controls playsinline muted autoplay  loop  />    
                 </div>   
                     <p>Coming to Android (and likely IOS) devices sometime in 2020</p>
                     <p>Join our mailing list to wishlist the game.</p>
@@ -133,7 +133,7 @@ const CSS = styled.header` {
         text-align: center;
     }
 
-    img {
+    video {
         width: 90%;
         max-width: 40em;
     }

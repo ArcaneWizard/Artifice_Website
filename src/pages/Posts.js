@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Image from '../components/Image'
+import Video from '../components/Video'
 
 import Menu from './../images/Menu.PNG'
 import Gameplay from './../images/Gameplay.PNG'
 import Level_2 from './../images/Level_2.png'
 import Level_3 from './../images/Level_3.png'
+import Level_3_v1 from './../images/Level_3.png'
+import Level_3_v2 from './../images/lvl3_v3.PNG'
+import video_lvl2 from './../videos/lvl_2.mp4'
+import video_lvl1 from './../videos/lvl_2_v2.mp4'
 
 export default class Posts extends Component {
     render() {        
@@ -14,13 +19,12 @@ export default class Posts extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="summary col-md-12 col-sm-12 ">
-                            <p> The Raged Knight is an action-packed bow tower defense game currently under development</p>
+                            <p> The Raged Knight is an action-packed, storyline following defense game currently under development</p>
                             <p> Here you can check out weekly screenshots and updates.</p>
                         </div>
-                        <Image src={Menu} caption={"Main Menu"} /> 
-                        <Image src={Gameplay} caption={"Level 1 map"}/> 
-                        <Image src={Level_2} caption={"Level 2 map"}/> 
-                        <Image src={Level_3} caption={"Level 3 map"}/> 
+                        <Image src={Menu} caption={"Main Menu (draft)"} /> 
+                        <Video src={video_lvl1} caption={"Level 2 clip"}/> 
+                        <Image src={Level_3} caption={"Mountain sneakpeak"} /> 
                     </div>
                 </div>
             </StyledDiv>
