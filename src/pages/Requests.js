@@ -7,7 +7,7 @@ export default class Requests extends Component {
             <StyledDiv>
                 <div className="container-fluid">
                     <h2>No community surveys are up yet.</h2>
-                    <h2>Come back later to influence how the game turns out!</h2>
+                    <h2>Come back later to decide how the game turns out!</h2>
                 </div>
             </StyledDiv>
         )
