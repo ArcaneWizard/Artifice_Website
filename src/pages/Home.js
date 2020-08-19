@@ -10,7 +10,7 @@ export default class Home extends Component {
             <CSS>
                 <div className="container-fluid">   
                 <div className="imgDiv col-md-12 col-sm-12 col-lg-12">
-                     <video src={lvl_2} type="video/mp4" controls playsinline webkit-playsinline muted autoplay  loop  />    
+                     <video src={lvl_2} type="video/mp4" preload="metadata" controls playsinline webkit-playsinline muted autoplay  loop  />    
                 </div>   
                     <p>Coming to Android (and likely IOS) devices sometime in 2020</p>
                     <p>Join our mailing list to wishlist the game.</p>
