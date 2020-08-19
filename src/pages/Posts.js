@@ -4,13 +4,10 @@ import Image from '../components/Image'
 import Video from '../components/Video'
 
 import Menu from './../images/Menu.PNG'
-import Gameplay from './../images/Gameplay.PNG'
-import Level_2 from './../images/Level_2.png'
 import Level_3 from './../images/Level_3.png'
-import Level_3_v1 from './../images/Level_3.png'
-import Level_3_v2 from './../images/lvl3_v3.PNG'
-import video_lvl2 from './../videos/lvl_2.mp4'
+import ice from './../images/icenator.PNG'
 import video_lvl1 from './../videos/lvl_2_v2.mp4'
+
 
 export default class Posts extends Component {
     render() {        
@@ -23,7 +20,7 @@ export default class Posts extends Component {
                             <p> Here you can check out weekly screenshots and updates.</p>
                         </div>
                         <Image src={Menu} caption={"Main Menu (draft)"} /> 
-                        <Video src={video_lvl1} caption={"Level 2 clip"}/> 
+                        <Image src={ice} caption={"Ice shard weapon"}/> 
                         <Image src={Level_3} caption={"Mountain sneakpeak"} /> 
                     </div>
                 </div>

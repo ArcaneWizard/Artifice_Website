@@ -61,6 +61,15 @@ const CSS = styled.div` {
 
  @media screen and (min-width: 700px) {
     .footer-bottom {
-        padding: 1em 0em 0.4em 0em;
+        padding: 0.8em 0em 0.2em 0em;
+      }
+      .footer-middle {
+          position: relative;
+          bottom: -1.08em;
+      }
+      .text-sx-left {
+        font-size: 0.9em;
+        position: relative;
+        bottom: 0.45em;.
       }
 }`;

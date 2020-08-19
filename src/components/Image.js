@@ -42,7 +42,7 @@ const StyledDiv = styled.div` {
 
     @media screen and (min-width: 700px) {{
         img {
-            width: 90%;
+            width: 92%;
             padding: 3em 3em 1.2em 3em;
         }
 

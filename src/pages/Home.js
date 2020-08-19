@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import lvl_2 from './../videos/lvl_2.mp4'
+import lvl_1 from './../images/Level_1.png'
 
 export default class Home extends Component {
 
@@ -10,8 +11,8 @@ export default class Home extends Component {
             <CSS>
                 <div className="container-fluid">   
                 <div className="imgDiv col-md-12 col-sm-12 col-lg-12">
-                     <video src={lvl_2} type="video/mp4" preload="metadata" controls playsinline webkit-playsinline muted autoplay  loop  />    
-                </div>   
+                     <img src={lvl_1}/>    
+                </div>    
                     <p>Coming to Android (and likely IOS) devices sometime in 2020</p>
                     <p>Join our mailing list to wishlist the game.</p>
                     <form>
@@ -55,7 +56,11 @@ async function addEmailToDatabase(e) {
 
 
 const CSS = styled.header` {
-    
+
+    .container-fluid {
+        margin-bottom: 3.4%;
+    }
+
     p {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 1.5em;
@@ -92,18 +97,18 @@ const CSS = styled.header` {
 
     @media screen and (min-width: 700px) {
        p {
-           font-size: 1.5em;
+           font-size: 1.3em;
        }
 
        #notification {
-            margin-top: 1.2em;
+            margin-top: 1.5em;
             font-size: 1em;
        }
         
         form {
             display: inline-block;
             width: 26%;
-            margin-top: 2em;
+            margin-top: 1.2em;
             min-width: 15em;
         }
     }
@@ -122,7 +127,7 @@ const CSS = styled.header` {
     }
 
     .imgDiv {        
-        padding: 3em 0em 3em 0em;
+        padding: 2em 0em 2em 0em;
         text-align: center;
     }
 
@@ -137,8 +142,8 @@ const CSS = styled.header` {
         text-align: center;
     }
 
-    video {
+    img {
         width: 90%;
-        max-width: 40em;
+        max-width: 35em;
     }
 }`;

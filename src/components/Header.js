@@ -108,15 +108,15 @@ const Navbar = styled.nav` {
 
      @media screen and (min-width: 700px) {
         a {
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
         .navbar, .navbar2 {
-            height: 4em;
+            height: 3em;
         }
         li {
             padding: 0em 10%;
             position: relative;
-            top: 0.2em;
+            top: 0em;
         }
       }
 
