@@ -20,7 +20,6 @@ const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-
 app.post('/test', (req, res) => {
     res.json("this is a test msg sent from the server while debugging");
 })
@@ -95,3 +94,6 @@ if (process.env.NODE_ENV === "production"){
 app.get('/*', (req, res) => {   
     res.sendFile(path.join(path.join(__dirname, "build/index.html")));
 });
+
+//ping app every 20 min to keep the server from sleeping
+require('heroku-self-ping').default("https://raged-knight.herokuapp.com/");

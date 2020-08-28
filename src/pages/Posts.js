@@ -9,6 +9,8 @@ import ice from './../images/icenator.PNG'
 import video_lvl1 from './../videos/lvl_2_v2.mp4'
 import rage from './../images/rage-2.PNG'
 import knightInDark from './../images/knight-in-dark.PNG'
+import ragedAbility from './../images/raged-ability.PNG'
+import fire from './../images/fire-2.PNG'
 
 
 export default class Posts extends Component {
@@ -21,10 +23,11 @@ export default class Posts extends Component {
                             <p> The Raged Knight is an action-packed, storyline following defense game currently under development</p>
                             <p> Here you can check out weekly screenshots and updates.</p>
                         </div>
-                        <Image src={Menu} caption={"Main Menu (draft)"} /> 
-                        <Image src={ice} caption={"Ice shard weapon"}/> 
-                        <Image src={Level_3} caption={"Mountain sneakpeak"} /> 
+                        <Image src={ragedAbility} caption={"Tier 3 rage"} />  
+                        <Image src={Menu} caption={"Main Menu (draft)"} />
+                        <Image src={fire} caption={"Fireballs"} /> 
                         <Image src={knightInDark} caption={"Story cutscene"} /> 
+                        <Image src={ice} caption={"Ice shards"}/> 
                         <Image src={rage} caption={"Story cutscene"}/> 
                     </div>
                 </div>

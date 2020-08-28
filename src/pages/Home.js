@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import lvl_2 from './../videos/lvl_2.mp4'
 import lvl_1 from './../images/Level_1.png'
+import chaos from './../images/4-diff-enemies.PNG'
 
 export default class Home extends Component {
 
@@ -11,7 +12,7 @@ export default class Home extends Component {
             <CSS>
                 <div className="container-fluid">   
                 <div className="imgDiv col-md-12 col-sm-12 col-lg-12">
-                     <img src={lvl_1}/>    
+                     <img src={chaos}/>    
                 </div>    
                     <p>Coming to Android (and likely IOS) devices sometime in 2020</p>
                     <p>Join our mailing list to wishlist the game.</p>
@@ -21,7 +22,7 @@ export default class Home extends Component {
                             <button onClick={addEmailToDatabase} className="btn btn-primary bg-primary">Join</button>
                         </div>
                     </form>
-                    <p id="notification">You'll be notified when the game releases and of any huge updates. Emails once / two weeks so no spam.</p>
+                    <p id="notification">You'll be notified when the game releases and of 1-2 major updates. No spam, we promise</p>
                 </div> 
             </CSS> 
         )
@@ -145,5 +146,6 @@ const CSS = styled.header` {
     img {
         width: 90%;
         max-width: 35em;
+        border: solid #000;
     }
 }`;
