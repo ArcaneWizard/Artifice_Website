@@ -10,10 +10,10 @@ export default class Home extends Component {
     render() {
         return (
             <CSS>
-                <div className="container-fluid">   
-                <div className="imgDiv col-md-12 col-sm-12 col-lg-12">
-                     <img src={chaos}/>    
-                </div>    
+                <div className="container-fluid">
+                    <div className="imgDiv col-md-12 col-sm-12 col-lg-12">
+                        <img src={chaos} />
+                    </div>
                     <p>Coming to Android (and likely IOS) devices sometime in 2020</p>
                     <p>Join our mailing list to wishlist the game.</p>
                     <form>
@@ -23,8 +23,8 @@ export default class Home extends Component {
                         </div>
                     </form>
                     <p id="notification">You'll be notified when the game releases and of 1-2 major updates. No spam, we promise</p>
-                </div> 
-            </CSS> 
+                </div>
+            </CSS>
         )
     }
 }
@@ -33,7 +33,7 @@ export default class Home extends Component {
 
 //post email to the mailing list database
 async function addEmailToDatabase(e) {
-    e.preventDefault(); 
+    e.preventDefault();
     const email = document.getElementById("email").value.toString();
 
     const posts = {

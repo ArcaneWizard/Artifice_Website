@@ -8,11 +8,11 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.2",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "g": "^2.0.1",
     "heroku": "^7.42.6",
     "heroku-self-ping": "^2.0.1",
-    "monk": "^7.3.1",
+    "monk": "^7.3.4",
     "nodemailer": "^6.4.11",
     "nodemailer-smtp-transport": "^2.7.4",
     "react": "^16.13.1",
@@ -23,7 +23,7 @@
     "turbo-cli": "^0.39.1"
   },
   "scripts": {
-    "start": "react-scripts start && node index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "install-client": "npm install",
     "heroku-postbuild": "npm install && npm run build",

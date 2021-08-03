@@ -29,7 +29,7 @@ app.post('/email', (req, res) => {
         mailingList.find({ mail: req.body.email }, { multi: false }, (err, obj) => {
 
             //if an array with that mail object is returned, it already exists
-            if (obj.length >= 1) 
+            if (obj.length >= 1)
                 res.json("This email has already been added");
 
             else {
@@ -49,9 +49,11 @@ app.post('/email', (req, res) => {
                     res.json("Please enter a valid email address.");
                 }
             }
-        });
+        }).catch((err) => {
+            console.log(err);
+        })
     }
-    catch {
+    catch (error) {
         res.json("Mailing list database not accessible. Try again later.")
     }
 });
@@ -87,11 +89,11 @@ function validateEmail(email) {
 
 app.listen(port, host, () => console.log(`Server listening on port ${port}`));
 
-if (process.env.NODE_ENV === "production"){    
-   app.use(express.static(path.join(__dirname, "build")));
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "build")));
 }
 
-app.get('/*', (req, res) => {   
+app.get('/*', (req, res) => {
     res.sendFile(path.join(path.join(__dirname, "build/index.html")));
 });
 
